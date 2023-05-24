@@ -1,0 +1,1 @@
+ps aux | grep 'qemu-system-x86_64' | grep -Ev 'sudo qemu-system-x86_64|grep' | awk '{print $2}'

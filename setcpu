@@ -1,0 +1,18 @@
+#!/bin/bash
+
+if [ $# -ne 5 ]
+then
+	echo "The total number of arguments should be 5, 5pids"
+	exit
+fi
+
+echo "QEMUPID= $1"
+echo "vCPU pid= $2, $3, $4, $5"
+#echo "vCPU pid= $2, $3"
+
+sudo taskset -pc 34 $1;
+sudo taskset -pc 35 $2;
+sudo taskset -pc 36 $3;
+sudo taskset -pc 37 $4;
+sudo taskset -pc 38 $5;
+
